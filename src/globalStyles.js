@@ -70,7 +70,7 @@ button:hover {
 }
 
 form {
-
+    width: 480px;
 }
 
 input {
