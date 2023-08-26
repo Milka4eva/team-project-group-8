@@ -9,10 +9,23 @@ body {
     padding: 0;
 }
 
-title {
-    color: #ffffff;
-    font-family: Inter, Bold;
-}
+$main-blue-color: #3E85F3;
+$light-blue-color: #E3F3FF;
+$white-color: #FFFFFF;
+$black-color: #111111;
+$grey-color: rgba(0,0,0,0.15);
+$hover-blue-color: #2B78EF;
+$error-red-color: #E74A3B;
+$correct-green-color: #3CBC81;
+$name-avatar-color: #343434;
+
+$main-font: Inter, Bold;
+$button-font: Inter, Semi Bold;
+$text-font: Inter, Medium;
+$form-font: Inter, Regular;
+
+$header-background: #3E85F3;
+$section-background: #E3F3FF;
 
 h1 {
     color: #3E85F3;
@@ -37,66 +50,9 @@ h4 {
     font-family: Inter, Semi Bold;
 }
 
-h5 {
-    color: #343434;
-    font-family: Inter, Bold;
-
-}
-
 p {
     color: #111111;
     font-family: Inter, Medium;
-}
-
-header {
-    background-color: #3E85F3;
-}
-
-section {
-    background-color: #E3F3FF;
-}
-
-button {
-    background-color: #3E85F3;
-    font-family: Inter, Semi Bold;
-    color: #ffffff;
-
-}
-
-button:hover {
-    background-folor: #2B78EF;
-    font-family: Inter, Semi Bold;
-    color: #ffffff;
-}
-
-form {
-    width: 480px;
-}
-
-input {
-    font-family: Inter, Semi Bold;
-    color: #111111;
-    opacity: 0.15;
-}
-
-input: error, input: correct {
-    font-family: Inter, Semi Bold;
-    color: #111111;
-}
-
-label {
-    font-family: Inter, Regular;
-    color: #111111;
-}
-
-label: error {
-    font-family: Inter, Regular;
-    color: #E74A3B;
-}
-
-label: correct {
-    font-family: Inter, Regular;
-    color: #3CBC81;
 }
 `;
  
