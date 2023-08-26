@@ -18,6 +18,7 @@ $hover-blue-color: #2B78EF;
 $error-red-color: #E74A3B;
 $correct-green-color: #3CBC81;
 $name-avatar-color: #343434;
+$linear-pink-color: #FFD2DD;
 
 $main-font: Inter, Bold;
 $button-font: Inter, Semi Bold;
