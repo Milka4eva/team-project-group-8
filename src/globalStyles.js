@@ -41,16 +41,6 @@ h2 {
     text-transform: uppercase;
 }
 
-h3 {
-    color ? '#fffff' : '#111111';
-    font-family: Inter, Bold;
-}
-
-h4 {
-    color: #3E85F3;
-    font-family: Inter, Semi Bold;
-}
-
 p {
     color: #111111;
     font-family: Inter, Medium;
