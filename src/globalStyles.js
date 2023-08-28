@@ -12,12 +12,12 @@ $mainBlueColor: #3E85F3;
 $lightBlueColor: #E3F3FF;
 $whiteColor: #FFFFFF;
 $blackColor: #111111;
-$greyColor: rgba(0,0,0,0.15);
 $hoverBlueColor: #2B78EF;
 $errorRedColor: #E74A3B;
 $correctGreenColor: #3CBC81;
 $nameAvatarColor: #343434;
 $linearPinkColor: #FFD2DD;
+$greyColor: rgba(0,0,0,0.15);
 
 $mainFont: 'Inter', Bold;
 $buttonFont: 'Inter', Semi Bold;
