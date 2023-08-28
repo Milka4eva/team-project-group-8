@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 $mainBlueColor: #3E85F3;
@@ -20,10 +21,10 @@ $correctGreenColor: #3CBC81;
 $nameAvatarColor: #343434;
 $linearPinkColor: #FFD2DD;
 
-$mainFont: Inter, Bold;
-$buttonFont: Inter, Semi Bold;
-$textFont: Inter, Medium;
-$formFont: Inter, Regular;
+$mainFont: 'Inter', Bold;
+$buttonFont: 'Inter', Semi Bold;
+$textFont: 'Inter', Medium;
+$formFont: 'Inter', Regular;
 
 $headerBackground: #3E85F3;
 $sectionBackground: #E3F3FF;
