@@ -1,20 +1,31 @@
 import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import GlobalStyle from '../globalStyles';
+import useAuth from 'hooks/useAuth';
+import { fetchCurrentUser } from 'redux/auth/auth-operations';
+import Login from 'Pages/Login';
 
 export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
-      }}
-    >
+  const { isRefreshing, userToken } = useAuth();
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const getUser = async () => {
+      if (userToken) {
+        dispatch(fetchCurrentUser(userToken));
+      }
+    };
+    getUser();
+  }, [dispatch, userToken]);
+
+  return isRefreshing ? (
+    <div>Loading....</div>
+  ) : (
+    <>
       <GlobalStyle />
       React homework template
-    </div>
+      <Login />
+    </>
   );
 };
