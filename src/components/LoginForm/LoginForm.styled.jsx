@@ -95,7 +95,7 @@ export const EmailInput = styled(Field)`
     font-size: 14px;
     font-style: normal;
     font-weight: 400;
-    line-height: 18px; 
+    line-height: 18px;
   }
   &:hover {
     border-color: #111111;

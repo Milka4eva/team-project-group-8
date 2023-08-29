@@ -1,5 +1,7 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
+import { register } from '../../redux/auth/auth-operations';
+import { useDispatch } from 'react-redux';
 
 import {
   MainContainer,
@@ -32,8 +34,10 @@ const initialValues = {
 };
 
 const RegistrationForm = () => {
+  const dispatch = useDispatch();
+
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+    dispatch(register(values));
     resetForm();
   };
 
@@ -127,9 +131,7 @@ const RegistrationForm = () => {
         </FormContainer>
 
         <SignupContainer>
-          <ButtonSignup type="button" >
-            Log In
-          </ButtonSignup>
+          <ButtonSignup type="button">Log In</ButtonSignup>
         </SignupContainer>
       </div>
       <GusContainer>
