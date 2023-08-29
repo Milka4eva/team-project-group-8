@@ -1,7 +1,8 @@
 import { persistReducer } from 'redux-persist';
 import { createSlice } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
-//import { authLogout } from 'redux/auth/auth.operations';
+import * as auth  from '../auth/auth-operations';
+
 import {
   getTasksOfMonth,
   addTaskOperation,
@@ -54,7 +55,7 @@ const calendarSlice = createSlice({
         state.error = payload;
         state.isLoading = false;
       })
-      //.addCase(authLogout.fulfilled, () => calendarInitState)
+      .addCase(auth.logout.fulfilled, () => calendarInitState)
 
       .addCase(addTaskOperation.pending, state => {
         state.isLoading = true;
