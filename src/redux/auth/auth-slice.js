@@ -73,7 +73,7 @@ const authSlice = createSlice({
       .addCase(updateUserInfo.pending, handelPending)
       .addCase(updateUserInfo.fulfilled, (state, action) => {
         state.isRefreshing = false;
-        state.user = { ...state.user, ...action.payload };
+        state.user = { ...state.user, ...action.payload.updatedUser };
         state.isLoggedIn = true;
       })
       .addCase(updateUserInfo.rejected, handelRejected)
