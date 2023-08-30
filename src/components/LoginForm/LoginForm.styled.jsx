@@ -2,8 +2,7 @@ import styled from 'styled-components';
 import { Field } from 'formik';
 
 export const MainContainer = styled.div`
-  display: inline-flex;
-  width: 100%;
+  display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
@@ -22,21 +21,19 @@ export const FormContainer = styled.div`
     padding: 40px;
     margin-bottom: 24px;
   }
-  @media (min-width: 1440px) {
-  }
+ 
 `;
 export const Title = styled.h1`
-  color: #3e85f3;
+  color: $main-blue-color;
   text-shadow: 0px 9.399999618530273px 57.6875px rgba(0, 0, 0, 0.04),
     0px 47px 355px rgba(0, 0, 0, 0.07);
-  // font-family: Inter;
   font-size: 18px;
-  font-style: normal;
   font-weight: 600;
   line-height: 24px;
   margin-bottom: 32px;
   margin-top: 0;
   display: inline-block;
+  text-transform: capitalize;
 
   @media (min-width: 768px) {
     font-size: 24px;
@@ -46,12 +43,12 @@ export const Title = styled.h1`
 export const LabelInput = styled.label`
   display: flex;
   flex-direction: column;
+  position: relative;
 `;
 export const SpanInputEmail = styled.span`
   color: ${props => props.$errEmail};
-  // font-family: Inter;
+  font-family: $form-font;
   font-size: 12px;
-  font-style: normal;
   font-weight: 600;
   line-height: normal;
   margin-bottom: 8px;
@@ -62,9 +59,7 @@ export const SpanInputEmail = styled.span`
 `;
 export const SpanInputPass = styled.span`
   color: ${props => props.$errPass};
-  // font-family: Inter;
   font-size: 12px;
-  font-style: normal;
   font-weight: 600;
   line-height: normal;
   margin-bottom: 8px;
@@ -83,19 +78,15 @@ export const EmailInput = styled(Field)`
   height: 46px;
   padding: 0;
   padding-left: 12px;
-  // font-family: Inter;
   font-size: 14px;
-  font-style: normal;
   font-weight: 400;
   line-height: 18px;
 
   ::placeholder {
     color: #dce3e5;
-    // font-family: Inter;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
-    line-height: 18px; 
+    line-height: 18px;
   }
   &:hover {
     border-color: #111111;
@@ -121,9 +112,7 @@ export const PasswordInput = styled(Field)`
 
   ::placeholder {
     color: #dce3e5;
-    // font-family: Inter;
     font-size: 14px;
-    font-style: normal;
     font-weight: 400;
     line-height: 18px; /* 128.571% */
   }
@@ -143,9 +132,16 @@ export const PasswordInput = styled(Field)`
 `;
 export const ErrorMsg = styled.p`
   color: #da1414;
-  // font-family: Inter;
   font-size: 12px;
-  font-style: normal;
+  font-weight: 400;
+  line-height: 14px;
+  margin-top: 8px;
+  margin-bottom: -22px;
+  padding-left: 12px;
+`;
+export const CorrectMsg = styled.p`
+  color: #3cbc81;
+  font-size: 12px;
   font-weight: 400;
   line-height: 14px;
   margin-top: 8px;
@@ -161,12 +157,14 @@ export const ButtonSubmit = styled.button`
   margin-top: 32px;
   border: none;
   color: #ffffff;
-  // font-family: Inter;
   font-size: 14px;
-  font-style: normal;
   font-weight: 600;
   line-height: 18px;
   letter-spacing: -0.28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
   &:hover {
     background: #2b78ef;
   }
@@ -179,13 +177,36 @@ export const ButtonSubmit = styled.button`
     letter-spacing: -0.36px;
   }
 `;
+export const IconButtonSubmitSpan = styled.span`
+ display:flex;
+ align-items: center;
+  }
+`;
+export const IconButtonSubmit = styled.svg`
+  width: 18px;
+  height: 18px;
+  @media (min-width: 768px) {
+    width: 20px;
+    height: 20px;
+  }
+`;
+export const Iconinput = styled.svg`
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  bottom: 11px;
+  right: 18px;
+  @media (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+  }
+`;
+
 export const ButtonSignup = styled.button`
   color: #3e85f3;
   text-shadow: 0px 9.399999618530273px 57.6875px rgba(0, 0, 0, 0.04),
     0px 47px 355px rgba(0, 0, 0, 0.07);
-  // font-family: Inter;
   font-size: 12px;
-  font-style: normal;
   font-weight: 600;
   line-height: 14px;
   text-decoration-line: underline;

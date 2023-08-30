@@ -13,9 +13,17 @@ import {
   ButtonSignup,
   SignupContainer,
   ErrorMsg,
+  CorrectMsg,
   PasswordInput,
   GusContainer,
+  IconButtonSubmit,
+  Iconinput,
+  IconButtonSubmitSpan,
 } from './LoginForm.styled';
+import { useMediaQuery } from '@chakra-ui/react';
+
+import Icon from '../../images/icons.svg';
+
 
 const userShema = object({
   email: string().email('This is an ERROR email').required(),
@@ -28,6 +36,8 @@ const initialValues = {
 };
 
 const LoginForm = () => {
+      const [isHidenGus] = useMediaQuery('(min-width: 1440px)');
+
   const handleSubmit = (values, { resetForm }) => {
     console.log(values);
     resetForm();
@@ -54,7 +64,11 @@ const LoginForm = () => {
                 <LabelInput htmlFor="email">
                   <SpanInputEmail
                     $errEmail={
-                      errors.email && touched.email ? '#E74A3B' : '#111'
+                      errors.email && touched.email
+                        ? '#E74A3B'
+                        : touched.email
+                        ? '#3CBC81'
+                        : '#111'
                     }
                   >
                     Email
@@ -68,15 +82,36 @@ const LoginForm = () => {
                     $errEmail={
                       errors.email && touched.email
                         ? ' 1px solid #E74A3B'
-                        : ' 1px solid rgba(220, 227, 229, 0.6)'
+                        : touched.email
+                        ? '1px solid #3CBC81'
+                        : '1px solid rgba(220, 227, 229, 0.6)'
                     }
                   />
-                  <FormError name="email" />
+                  {errors.email && touched.email ? (
+                    <Iconinput>
+                      <use href={Icon + '#EmailError'} />
+                    </Iconinput>
+                  ) : touched.email ? (
+                    <Iconinput>
+                      <use href={Icon + '#EmailDone'} />
+                    </Iconinput>
+                  ) : null}
+
+                  {errors.email && touched.email ? (
+                    <FormError name="email" />
+                  ) : touched.email ? (
+                    <CorrectMsg>This is an CORRECT email</CorrectMsg>
+                  ) : null}
                 </LabelInput>
+                
                 <LabelInput htmlFor="password">
                   <SpanInputPass
                     $errPass={
-                      errors.password && touched.password ? '#E74A3B' : '#111'
+                      errors.password && touched.password
+                        ? '#E74A3B'
+                        : touched.password
+                        ? '#3CBC81'
+                        : '#111'
                     }
                   >
                     Password
@@ -90,12 +125,31 @@ const LoginForm = () => {
                     $errPass={
                       errors.password && touched.password
                         ? ' 1px solid #E74A3B'
-                        : ' 1px solid rgba(220, 227, 229, 0.6)'
+                        : touched.password
+                        ? '1px solid #3CBC81'
+                        : '1px solid rgba(220, 227, 229, 0.6)'
                     }
                   />
+                  {errors.password && touched.password ? (
+                    <Iconinput>
+                      <use href={Icon + '#EmailError'} />
+                    </Iconinput>
+                  ) : touched.password ? (
+                    <Iconinput>
+                      <use href={Icon + '#EmailDone'} />
+                    </Iconinput>
+                  ) : null}
+
                   <FormError name="password" />
                 </LabelInput>
-                <ButtonSubmit type="submit">Log In</ButtonSubmit>
+                <ButtonSubmit type="submit">
+                  <span> Log In</span>
+                  <IconButtonSubmitSpan>
+                    <IconButtonSubmit>
+                      <use href={Icon + '#logIn'} />
+                    </IconButtonSubmit>
+                  </IconButtonSubmitSpan>
+                </ButtonSubmit>
               </Form>
             )}
           </Formik>
@@ -105,14 +159,16 @@ const LoginForm = () => {
           <ButtonSignup type="button">Sign Up</ButtonSignup>
         </SignupContainer>
       </div>
-      <GusContainer>
-        <img
-          src={require('../../images/loginGus.png')}
-          alt="rocket-gus"
-          height={521}
-          width={368}
-        />
-      </GusContainer>
+      {isHidenGus && (
+        <GusContainer>
+          <img
+            src={require('../../images/loginGus.png')}
+            alt="rocket-gus"
+            height={521}
+            width={368}
+          />
+        </GusContainer>
+      )}
     </MainContainer>
   );
 };
