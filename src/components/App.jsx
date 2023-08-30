@@ -12,12 +12,12 @@ import { fetchCurrentUser } from 'redux/auth/auth-operations';
 import TestSharedLayoutPage from './TestSharedLayoutPage';
 
 
-const Login = lazy(() => import('../Pages/Login'));
-const RegisterPage = lazy(() => import('../Pages/Registration'));
-const AccountPage = lazy(() => import('../Pages/Account'));
-const MainPage = lazy(() => import('../Pages/Main'));
-const StatisticsPage = lazy(() => import('../Pages/Statisctics'));
-const CalendarPage = lazy(() => import('../Pages/CalendarPage/CalendarPage'));
+const Login = lazy(() => import('../pages/Login'));
+const RegisterPage = lazy(() => import('../pages/Registration'));
+const AccountPage = lazy(() => import('../pages/Account'));
+const MainPage = lazy(() => import('../pages/Main'));
+const StatisticsPage = lazy(() => import('../pages/Statisctics'));
+const CalendarPage = lazy(() => import('../pages/CalendarPage/CalendarPage'));
 
  export const App = () => {
   const { userToken } = useAuth();
