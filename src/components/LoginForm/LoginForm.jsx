@@ -18,6 +18,7 @@ import {
   PasswordInput,
   GusContainer,
 } from './LoginForm.styled';
+import { useNavigate } from 'react-router-dom';
 
 const userShema = object({
   email: string().email('This is an ERROR email').required(),
@@ -29,7 +30,11 @@ const initialValues = {
   password: '',
 };
 
+
+
 const LoginForm = () => {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const handleSubmit = (values, { resetForm }) => {
@@ -106,7 +111,7 @@ const LoginForm = () => {
         </FormContainer>
 
         <SignupContainer>
-          <ButtonSignup type="button">Sign Up</ButtonSignup>
+          <ButtonSignup type="button" onClick={() => navigate('/register')}>Sign Up</ButtonSignup>
         </SignupContainer>
       </div>
       <GusContainer>
