@@ -8,7 +8,7 @@ import GlobalStyle from '../globalStyles';
 import { Route, Routes } from 'react-router-dom';
 import useAuth from 'hooks/useAuth';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
-import TestPage from './test';
+import TestSharedLayoutPage from './TestSharedLayoutPage';
 
 
 const Login = lazy(() => import('../Pages/Login'));
@@ -36,7 +36,7 @@ const CalendarPage = lazy(() => import('../Pages/CalendarPage/CalendarPage'));
       <GlobalStyle />
       
       <Routes>
-        <Route path="/" element={<TestPage />}>
+        <Route path="/" element={<TestSharedLayoutPage />}>
         <Route
           index
           element={

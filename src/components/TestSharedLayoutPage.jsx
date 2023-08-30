@@ -2,7 +2,7 @@ import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
 
 
-const TestPage = () => {
+const TestSharedLayoutPage = () => {
     return <div>
         <p>Hello from test sharedLayout page</p>
         <Suspense>
@@ -11,4 +11,4 @@ const TestPage = () => {
     </div>
 };
 
-export default TestPage;
+export default TestSharedLayoutPage;
