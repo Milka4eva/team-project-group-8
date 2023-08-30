@@ -1,11 +1,11 @@
-import Main from '../components/MainPage/MainPage';
+import MainHomePage from '../components/MainPage/MainPage';
 
 const MainPage = () => {
   return (
     <>
-      <MainPage />
+      <MainHomePage />
     </>
   );
 };
 
-export default Main;
+export default MainPage;
