@@ -1,5 +1,7 @@
 import { Formik, Form, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
+import { register } from '../../redux/auth/auth-operations';
+import { useDispatch } from 'react-redux';
 
 import {
   MainContainer,
@@ -40,10 +42,14 @@ const initialValues = {
 };
 
 const RegistrationForm = () => {
+
   const [isHidenGus] = useMediaQuery('(min-width: 1440px)');
 
+  const dispatch = useDispatch();
+
+
   const handleSubmit = (values, { resetForm }) => {
-    console.log(values);
+    dispatch(register(values));
     resetForm();
   };
 
