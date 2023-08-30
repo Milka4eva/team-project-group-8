@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://milka4eva.github.io/team-project-group-8/",
   "dependencies": {
+    "@chakra-ui/react": "^2.8.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
