@@ -22,8 +22,7 @@ export default function CalendarPage() {
 
   return (
     <Container>
-          <CalendarToolbar />
-          <p> SOMETHING</p>
+      <CalendarToolbar />
       <Outlet />
     </Container>
   );
