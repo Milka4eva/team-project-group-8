@@ -1,11 +1,10 @@
-import Account from '../components/AccountPage/AccountPage';
 
 const AccountPage = () => {
   return (
-    <>
-      <AccountPage />
-    </>
+    <div>
+      <p>AccountPage</p>
+    </div>
   );
 };
 
-export default Account;
+export default AccountPage;
