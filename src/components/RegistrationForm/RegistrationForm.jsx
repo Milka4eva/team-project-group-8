@@ -26,9 +26,8 @@ import {
   SubContainer,
 } from './RegistrationForm.styled';
 import { useMediaQuery } from '@chakra-ui/react';
-
 import Icon from '../../images/icons.svg';
-
+import { useNavigate } from 'react-router-dom';
 const userShema = object({
   name: string().required(),
   email: string().email('This is an ERROR email').required(),
@@ -42,9 +41,8 @@ const initialValues = {
 };
 
 const RegistrationForm = () => {
-
-  const [isHidenGus] = useMediaQuery('(min-width: 1440px)');
-
+const [isHidenGus] = useMediaQuery('(min-width: 1440px)');
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
 
@@ -202,7 +200,7 @@ const RegistrationForm = () => {
         </FormContainer>
 
         <SignupContainer>
-          <ButtonSignup type="button">Log In</ButtonSignup>
+          <ButtonSignup type="button" onClick={() => navigate('/login')}>Log In</ButtonSignup>
         </SignupContainer>
       </SubContainer>
       {isHidenGus && (

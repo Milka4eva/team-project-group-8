@@ -23,10 +23,8 @@ import {
   IconButtonSubmitSpan,
 } from './LoginForm.styled';
 import { useMediaQuery } from '@chakra-ui/react';
-
 import Icon from '../../images/icons.svg';
-
-
+import { useNavigate } from 'react-router-dom';
 const userShema = object({
   email: string().email('This is an ERROR email').required(),
   password: string().min(6).max(16).required(),
@@ -37,9 +35,11 @@ const initialValues = {
   password: '',
 };
 
-const LoginForm = () => {
-  const [isHidenGus] = useMediaQuery('(min-width: 1440px)');
 
+
+const LoginForm = () => {
+const [isHidenGus] = useMediaQuery('(min-width: 1440px)');
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
 
@@ -161,7 +161,7 @@ const LoginForm = () => {
         </FormContainer>
 
         <SignupContainer>
-          <ButtonSignup type="button">Sign Up</ButtonSignup>
+          <ButtonSignup type="button" onClick={() => navigate('/register')}>Sign Up</ButtonSignup>
         </SignupContainer>
       </div>
       {isHidenGus && (
