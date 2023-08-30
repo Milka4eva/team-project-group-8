@@ -5,6 +5,7 @@ import PrivateRoute from './PrivateRoute/PrivateRoute';
 import PublicRoute from './PublicRoute/PublicRoute';
 import { Suspense, lazy } from 'react';
 import GlobalStyle from '../globalStyles';
+import CalendarPage from './../pages/CalendarPage/CalendarPage';
 import { Route, Routes } from 'react-router-dom';
 import useAuth from 'hooks/useAuth';
 import { fetchCurrentUser } from 'redux/auth/auth-operations';
