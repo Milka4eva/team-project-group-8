@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 import {
   SideBarContainer,
   SideBarHeaderWrapper,
@@ -16,17 +17,19 @@ import {
   LogOutBtn,
   LogOutBtnTitle,
 } from './SideBar.styled';
-import logo from './goose-logo-l.png';
-import closeIcon from './close-menu-button.svg';
-import calendarCheckIcon from './calendar-check-black.svg';
-import userCheckIcon from './user-check-black.svg';
-import statisticsIcon from './statistics.svg';
-import logoutIcon from './log-out-button.svg';
+import logo from '../../images/Icons/goose-logo-l.png';
+import closeIcon from '../../images/Icons/close-menu-button.svg';
+import calendarCheckIcon from '../../images/Icons/calendar-check-black.svg';
+import userCheckIcon from '../../images/Icons/user-check-black.svg';
+import statisticsIcon from '../../images/Icons/statistics.svg';
+import logoutIcon from '../../images/Icons/log-out-button.svg';
+
 
 const SideBar = () => {
-  //   const navigate = useNavigate();
+    const navigate = useNavigate();
 
   return (
+    <>        
     <SideBarContainer>
       <SideBarHeaderWrapper>
         <SideBarLogoWrapper>
@@ -80,13 +83,17 @@ const SideBar = () => {
         </ul>
       </NavigationWraper>
 
-      <LogOutBtn onClick={'#'}>
+      <LogOutBtn onClick={() => navigate('login')}>
         <LogOutBtnTitle>Log out</LogOutBtnTitle>
         <svg width={20} height={20} alt={'logout'}>
           <use href={logoutIcon + '#logout'}></use>
         </svg>
       </LogOutBtn>
-    </SideBarContainer>
+      </SideBarContainer>
+      <Suspense>
+            <Outlet />
+        </Suspense>
+    </>
   );
 };
 
